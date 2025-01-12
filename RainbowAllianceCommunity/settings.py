@@ -1,5 +1,8 @@
 from decouple import config
 from pathlib import Path
+import os
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,10 +91,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Add this to tell Django where your static files are located
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Look for static files in the "static" directory at the base of your project
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR / 'static')
+]  # Look for static files in the "static" directory at the base of your project
 
 # Static files collection directory for deployment
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will place your static files for deployment
+STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')  # This is where collectstatic will place your static files for deployment
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
