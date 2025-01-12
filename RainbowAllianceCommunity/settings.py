@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-8$sgv_0n-cob20_s79d=xgwnjco)n4gak2oz#_xdw^(omp0gcm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://rainbowalliance.onrender.com']  # Update with allowed hosts when deploying
+ALLOWED_HOSTS = ['rainbowalliance-gjtb.onrender.com', 'localhost', '127.0.0.1']  # Update with allowed hosts when deploying
 
 # Application definition
 INSTALLED_APPS = [
