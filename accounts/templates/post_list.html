@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post List - Rainbow Alliance Community</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Rainbow Alliance</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'post-list' %}">Posts</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main class="post-list-page">
+        <section class="post-list-section">
+            <h1>Post List</h1>
+
+            {% if user.is_authenticated %}
+                <h3>Welcome, {{ user.username }}!</h3>
+                <a href="{% url 'post-create' %}" class="cta-button">Create a new post</a>
+            {% else %}
+                <p>Please log in to create posts.</p>
+            {% endif %}
+
+            <ul class="post-list">
+                {% if posts %}
+                    {% for post in posts %}
+                        <li class="post-item">
+                            <div class="post-header">
+                                <h2>{{ post.title }}</h2>
+                            </div>
+                            <div class="post-body">
+                                <p>{{ post.content }}</p>
+                            </div>
+                            <div class="post-meta">
+                                <p><strong>Author:</strong> {{ post.author.username }}</p>
+                                <p><strong>Created at:</strong> {{ post.created_at }}</p>
+                                <p><strong>Comments:</strong> 
+                                    {% if post.comments.count %}
+                                        {{ post.comments.count }} comment{{ post.comments.count|pluralize }}
+                                    {% else %}
+                                        No comments yet.
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="post-actions">
+                                <a href="{% url 'post-detail' post.id %}" class="cta-button">View Details</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>No posts available.</p>
+                {% endif %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rainbow Alliance. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,658 @@
+/* General styling for the navbar */
+nav {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient */
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+nav a {
+    color: rgb(22, 21, 21);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Slight hover effect */
+}
+
+/* Styling for the form container */
+.form-container {
+    background:linear-gradient(to right, red, orange, yellow, green, indigo, violet); /* Rainbow gradient */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 900px; /* Form width */
+    margin: 50px auto; /* Center the form */
+    padding: 30px; /* Spacing inside the form */
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #b6b6b6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff; /* Blue focus effect */
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Ensure navbar does not turn into a list */
+.nav-links {
+    list-style: none;  /* Removes the default list style */
+    display: flex;     /* Keeps the links in a row */
+    justify-content: center; /* Center the links */
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px; /* Adds spacing between the list items */
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background-image: url('path/to/hero-image.jpg'); /* Add a stunning background image */
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4); /* Dark overlay for text visibility */
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Add shadow for depth */
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background-color: #a7a7a7; /* A warm color that stands out */
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e44e00; /* Darken on hover */
+}
+
+/* Initiatives Section Styling */
+
+.initiative {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient */
+    color: rgb(0, 0, 0); /* Text color for contrast */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the container */
+    margin: 10px; /* Spacing between containers */
+    text-align: center; /* Center-align text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.initiative:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.initiatives-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Wrap containers if necessary */
+    gap: 20px; /* Space between containers */
+    justify-content: center; /* Center the containers */
+}
+
+.initiative h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.initiative p {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+/* Call to Action Styling */
+.call-to-action {
+    background-color: #ffeb3b;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.call-to-action h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.call-to-action p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.call-to-action .cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.call-to-action .cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+}
+
+.post-list {
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0; /* Removes extra space */
+    margin: 0 auto; /* Centers the list */
+    max-width: 800px; /* Restricts the width for better readability */
+}
+
+.post-item {
+    background: #ffffff; /* White background for posts */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Inner spacing */
+    margin-bottom: 20px; /* Space between posts */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
+}
+
+.post-item:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.post-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007bff; /* Use a striking color for post titles */
+}
+
+.post-body p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000; /* Softer text color for content */
+    margin-bottom: 15px;
+}
+
+.post-meta p {
+    font-size: 14px;
+    color: #000000; /* Even softer text color for metadata */
+    margin-bottom: 5px;
+}
+
+.post-actions .cta-button {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.post-list-section {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient */
+    padding: 30px 15px; /* Add some spacing */
+    border-radius: 10px; /* Round the section edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
+    margin: 20px auto; /* Center the section */
+    max-width: 100%; /* Full-width responsiveness */
+}
+
+/* General styling for the post detail page */
+.post-detail-page {
+    background-color: #fff;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Post Title Styling */
+.post-detail-page h1 {
+    font-size: 1.5rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Meta Information (Author, Date Created) */
+.post-meta {
+    font-size: 1rem;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-meta strong {
+    color: #333;
+}
+
+/* Post Content Styling */
+.post-body {
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Comment Section Styling */
+.comment-section {
+    margin-top: 40px;
+    border-top: 2px solid #5f5757;
+    padding-top: 20px;
+}
+
+.comment-section h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Individual Comment Styling */
+.comment {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.comment .author {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.comment .created-at {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.comment .content {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* Comment Form Styling */
+.comment-form {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.comment-form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+.comment-form button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Back to Posts Button */
+a.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+a.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+}
+
+/* Styling the comment section container */
+.comment-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+/* Styling the comments list */
+.comments-list {
+    margin-top: 20px;
+}
+
+/* Styling individual comment items */
+.comments-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comments-list li {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #02cff3;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comments-list strong {
+    font-weight: bold;
+}
+
+.comments-list small {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Comment input field styles */
+.comment-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-section form input[type="text"],
+.comment-section form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #efff0c;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f8f9fa;
+}
+
+.comment-section form button.cta-button {
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.comment-section form button.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.comment-section form p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Styling for the Post Content at the Top of the Comments Section */
+.post-details {
+    background: linear-gradient(to right, orange, yellow, green, indigo, violet); /* Rainbow gradient */
+    padding: 5px 30px; /* Add some spacing */
+    border-radius: 10px; /* Round the section edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
+    margin: 20px auto; /* Center the section */
+    max-width: 100%; /* Full-width responsiveness */
+
+}
+
+/* Title Styling */
+.post-details h1 {
+    font-size: 2rem;
+    color: #000000; /* Darker text for the title */
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Content Styling */
+.post-details .post-content {
+    font-size: 1.2rem;
+    color: #000000; /* Softer text for content */
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Author and Metadata Styling */
+.post-details .post-meta {
+    font-size: 1rem;
+    color: #000000; /* Subtle color for metadata */
+    text-align: center;
+    margin-top: 10px;
+}
+
+.post-details .post-meta strong {
+    color: #000000; /* Highlight the metadata labels */
+}
+
+/* Optional: Add a Border Separator */
+.post-details .separator {
+    height: 2px;
+    background-color: #c04d4d; /* Light separator line */
+    margin: 20px 0;
+}
+
+.post-meta p {
+    color: rgb(0, 0, 0);
+}
+
+/* Skrill Donation Modal Styles */
+.donate-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #e4e4e4;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    margin-top: -10px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Button styles for Donate */
+.donate-btn {
+    background-color: #007bff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.donate-btn:hover {
+    background-color: #fbff09;
+}
+
+/* Responsive Navbar for smaller screens */
+@media (max-width: 968px) {
+    nav {
+        padding: 1px; /* Reduce padding for smaller screens */
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-evenly; /* Align links evenly across the width */
+        width: 100%; /* Make the navbar links take the full width */
+        padding: 0; /* Remove padding to make the navbar compact */
+    }
+
+    nav a {
+        font-size: 14px; /* Reduce font size */
+        margin: 0 1px; /* Slightly reduced margin between items */
+    }
+
+    .nav-links li {
+        margin: 0; /* Remove extra margin for list items */
+    }
+
+    /* Optional: Add padding and reduce font size for form containers */
+    .form-container {
+        padding: 10px; /* Reduce padding */
+        max-width: 100%; /* Ensure container takes full width */
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust heading size for better mobile view */
+    }
+    
+    .hero-text h2 {
+        font-size: 32px; /* Adjust hero title for smaller screens */
+    }
+
+    .cta-button {
+        font-size: 16px; /* Reduce font size of the CTA button */
+        padding: 8px 16px; /* Adjust padding */
+    }
+
+    .initiative {
+        font-size: 14px; /* Reduce font size of initiatives */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .call-to-action h3 {
+        font-size: 24px; /* Adjust call-to-action heading size */
+    }
+}

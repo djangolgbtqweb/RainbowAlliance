@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/accounts/signup/">Sign Up</a>
+        <a href="/accounts/login/">Login</a>
+    </nav>
+
+    <!-- Login Form Section -->
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username_or_email" placeholder="Username or Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>
+

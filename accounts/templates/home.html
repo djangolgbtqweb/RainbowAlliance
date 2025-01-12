@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Alliance Community</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Rainbow Alliance</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'post-list' %}">Posts</a></li>
+ 
+
+                {% if user.is_authenticated %}
+                    <li><a href="/logout/">Logout</a></li>
+                {% else %}
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/signup/">Sign Up</a></li>
+                {% endif %}
+
+                <li><button class="donate-btn" id="donate-btn">Donate Now</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Donation Modal -->
+    <div id="donate-modal" class="donate-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal-btn">&times;</span>
+            <h2>Choose Your Donation Option</h2>
+
+            <div class="donation-options">
+                <div class="donation-option" id="paypal-option">
+                    <h3>Donate via PayPal</h3>
+                    <form action="https://www.paypal.com/donate?hosted_button_id=GEGWMBG5KGFYS" method="post" target="_blank">
+                        <label for="amount">Amount (USD):</label>
+                        <select name="amount" id="amount">
+                            <option value="50">50 USD</option>
+                            <option value="100">100 USD</option>
+                            <option value="150">150 USD</option>
+                            <option value="200">200 USD</option>
+                        </select>
+                        <button type="submit" class="submit-btn">Donate</button>
+                    </form>
+                </div>
+
+                <div class="donation-option" id="skrill-option">
+                    <h3>Donate via Skrill</h3>
+                    <form>
+                        <label for="skrill-amount">Amount (USD):</label>
+                        <select id="skrill-amount" onchange="redirectToSkrill(this)">
+                            <option value="https://skrill.me/rq/Humphrey/50/USD?key=WxVQf8tJAayYm-AZLNDfr0g-PHI">50 USD</option>
+                            <option value="https://skrill.me/rq/Humphrey/100/USD?key=1ZpOsqPtFp26DMwuU23fquNYy_A">100 USD</option>
+                            <option value="https://skrill.me/rq/Humphrey/150/USD?key=paG7OwUITqaDY9a9RFL8uNkECPo">150 USD</option>
+                            <option value="https://skrill.me/rq/Humphrey/200/USD?key=-Uq7xdJcV71LLiY1p_vgAJftr1i">200 USD</option>
+                        </select>
+                        <button type="button" class="submit-btn" onclick="redirectToSkrill()">Donate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="homepage">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h2>Empowering the SOGIESC Community – Together, We Rise</h2>
+                <p>At Rainbow Alliance, we are committed to creating a world where the SOGIESC community is celebrated, supported, and empowered.</p>
+                <a href="#our-initiatives" class="cta-button">Learn More</a>
+            </div>
+        </section>
+
+        <section id="our-initiatives" class="initiatives-section">
+            <h2>Our Core Initiatives</h2>
+            
+            <div class="initiatives-container">
+                <div class="initiative">
+                    <h3>Counseling & Mental Health Support</h3>
+                    <p>Confidential, compassionate support for emotional and mental health challenges.</p>
+                </div>
+                <div class="initiative">
+                    <h3>Empowerment & Advocacy</h3>
+                    <p>Build resilience, gain confidence, and fight for equal rights.</p>
+                </div>
+                <div class="initiative">
+                    <h3>Employment Support</h3>
+                    <p>Connecting SOGIESC individuals to job opportunities and career resources.</p>
+                </div>
+                <div class="initiative">
+                    <h3>Holistic Resources & Support</h3>
+                    <p>Offering housing, legal support, education, and skill-building programs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <h3>Why We Need Your Support</h3>
+            <p>Your contribution allows us to continue offering life-changing programs and services to the LGBTQ+ community. Together, we can create an inclusive world where everyone can thrive.</p>
+            <a href="#donate" class="cta-button" id="donate-footer-btn">Donate Now</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rainbow Alliance. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function redirectToSkrill(selectElement) {
+            const url = selectElement.value || document.getElementById('skrill-amount').value;
+            if (url) {
+                window.open(url, '_blank');
+            }
+        }
+
+        document.getElementById('donate-btn').addEventListener('click', function() {
+            document.getElementById('donate-modal').style.display = 'block';
+        });
+
+        document.getElementById('close-modal-btn').addEventListener('click', function() {
+            document.getElementById('donate-modal').style.display = 'none';
+        });
+
+        document.getElementById('donate-footer-btn').addEventListener('click', function() {
+            document.getElementById('donate-modal').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
+
+
+
+
