@@ -30,3 +30,4 @@ venv/
 # Ignore lock files
 ~$*
 
+.env
