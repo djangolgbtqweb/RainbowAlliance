@@ -35,6 +35,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -92,11 +93,11 @@ STATIC_URL = '/static/'
 
 # Add this to tell Django where your static files are located
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'staticfiles')
 ]  # Look for static files in the "static" directory at the base of your project
 
 # Static files collection directory for deployment
-STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')  # This is where collectstatic will place your static files for deployment
+STATIC_ROOT = os.path.join(BASE_DIR / 'static')  # This is where collectstatic will place your static files for deployment
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
