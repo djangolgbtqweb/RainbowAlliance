@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.http import JsonResponse
 from accounts.models import User
 from django.core.exceptions import ValidationError
@@ -25,9 +26,11 @@ def signup(request):
         last_name = request.POST.get('last_name', '')    # Optional
 
         if User.objects.filter(username=username).exists():
-            return JsonResponse({'error': 'Username already exists'}, status=400)
+            messages.error(request, 'Username already exists.')
+            return redirect('signup')
         if User.objects.filter(email=email).exists():
-            return JsonResponse({'error': 'Email already exists'}, status=400)
+            messages.error(request, 'Email already exists.')
+            return redirect('signup')
 
         try:
             user = User.objects.create_user(
@@ -38,10 +41,11 @@ def signup(request):
                 last_name=last_name
             )
             user.save()
-            # Redirect to login page after successful signup
-            return redirect('login')  # Replace 'login' with the correct name of your login URL pattern
+            messages.success(request, 'Signup successful! Please log in.')
+            return redirect('login')
         except ValidationError as e:
-            return JsonResponse({'error': str(e)}, status=400)
+            messages.error(request, f"Error: {str(e)}")
+            return redirect('signup')
 
     return render(request, 'signup.html')
 
@@ -59,10 +63,11 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            # Redirect to the home page after login
-            return redirect('home')  # Replace 'home' with the correct name of your home URL pattern
+            messages.success(request, 'Login successful!')
+            return redirect('home')
         else:
-            return JsonResponse({'error': 'Invalid credentials'}, status=400)
+            messages.error(request, 'Invalid credentials.')
+            return redirect('login')
 
     return render(request, 'login.html')
 
@@ -105,5 +110,5 @@ def post_detail(request, id):
     return render(request, 'post_detail.html', {'post': post, 'comments': comments, 'form': form})
 
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_at')
     return render(request, 'post_list.html', {'posts': posts})
