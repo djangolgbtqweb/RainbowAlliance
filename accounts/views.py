@@ -59,7 +59,8 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            return JsonResponse({'success': 'Login successful'}, status=200)
+            # Redirect to the home page after login
+            return redirect('home')  # Replace 'home' with the correct name of your home URL pattern
         else:
             return JsonResponse({'error': 'Invalid credentials'}, status=400)
 
