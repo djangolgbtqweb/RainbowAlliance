@@ -38,7 +38,8 @@ def signup(request):
                 last_name=last_name
             )
             user.save()
-            return JsonResponse({'success': 'User created successfully'}, status=201)
+            # Redirect to login page after successful signup
+            return redirect('login')  # Replace 'login' with the correct name of your login URL pattern
         except ValidationError as e:
             return JsonResponse({'error': str(e)}, status=400)
 
@@ -64,7 +65,7 @@ def login_user(request):
 
     return render(request, 'login.html')
 
-# Post views (unchanged)
+# Post views
 class PostListCreateView(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -105,4 +106,3 @@ def post_detail(request, id):
 def post_list(request):
     posts = Post.objects.all()
     return render(request, 'post_list.html', {'posts': posts})
-
