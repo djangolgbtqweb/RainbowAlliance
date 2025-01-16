@@ -2,8 +2,6 @@ from decouple import config
 from pathlib import Path
 import os
 
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',  # Your accounts app
-      'django_extensions',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +72,16 @@ DATABASES = {
     }
 }
 
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# Static files collection directory for deployment
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # Ensure this points to the directory containing your static assets
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will place your static files for production
+
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
@@ -88,21 +96,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-
-# Add this to tell Django where your static files are located
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles')
-]  # Look for static files in the "static" directory at the base of your project
-
-# Static files collection directory for deployment
-STATIC_ROOT = os.path.join(BASE_DIR / 'static')  # This is where collectstatic will place your static files for deployment
-
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom User model
 AUTH_USER_MODEL = 'accounts.User'
-
-

@@ -93,15 +93,31 @@ body {
     color: #333;
 }
 
-/* Hero Section Styling */
 .hero-section {
-    background-image: url('path/to/hero-image.jpg'); /* Add a stunning background image */
-    background-size: cover;
-    background-position: center;
-    color: rgb(0, 0, 0);
-    padding: 80px 20px;
-    text-align: center;
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4); /* Dark overlay for text visibility */
+    background: linear-gradient(to right, #afafaf, #b1b1b1); /* Warm gradient background */
+    color: white; /* Text color for contrast */
+    padding: 100px 20px; /* Space around the section */
+    text-align: center; /* Center the text */
+    border-radius: 0px; /* Slightly rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text h2 {
@@ -656,3 +672,36 @@ footer p {
         font-size: 24px; /* Adjust call-to-action heading size */
     }
 }
+
+.image-section {
+    width: 100%;  /* Ensure the container fills the full width */
+    height: 40vh;  /* Set the height of the container for smaller screens */
+    margin-top: 0px;
+    text-align: center;
+    overflow: hidden;  /* Prevent overflow of the image */
+    display: flex;  /* Use flex to center the image */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Styling */
+.hero-image {
+    width: 100%;  /* Ensure the image fills the container's width */
+    height: auto;  /* Maintain the image's aspect ratio */
+    object-fit: contain;  /* Ensure the entire image is visible */
+    object-position: center; /* Center the image both vertically and horizontally */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .image-section {
+        height: 20vh;  /* Increase the container height for medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .image-section {
+        height: 150vh;  /* Adjust the container height for larger screens */
+    }
+}
+

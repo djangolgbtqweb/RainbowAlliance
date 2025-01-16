@@ -16,7 +16,6 @@
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="{% url 'post-list' %}">Posts</a></li>
- 
 
                 {% if user.is_authenticated %}
                     <li><a href="/logout/">Logout</a></li>
@@ -29,6 +28,11 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Image Section (separate container) -->
+    <section class="image-section">
+        <img src="{% static 'images/front.png' %}" alt="" class="hero-image">
+    </section>
 
     <!-- Donation Modal -->
     <div id="donate-modal" class="donate-modal" style="display: none;">
@@ -79,7 +83,6 @@
 
         <section id="our-initiatives" class="initiatives-section">
             <h2>Our Core Initiatives</h2>
-            
             <div class="initiatives-container">
                 <div class="initiative">
                     <h3>Counseling & Mental Health Support</h3>
@@ -134,7 +137,6 @@
     </script>
 </body>
 </html>
-
 
 
 
