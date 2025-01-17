@@ -3,6 +3,9 @@ from django.contrib.auth.views import LogoutView
 from . import views
 from django.views.generic.base import RedirectView
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     # Home and User Authentication
     path('', views.home, name='home'),  # Home page route
@@ -11,6 +14,10 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='home'), name='logout'),  # Redirect to home after logout
      path('accounts/signup/', RedirectView.as_view(url='/signup/', permanent=False)),
     path('accounts/login/', RedirectView.as_view(url='/login/', permanent=False)),
+    
+    path('resources/', views.educational_resources, name='educational-resources'),
+    path('upload-resource/', views.upload_resource, name='upload-resource'),
+    
 
     # HTML views for Post list, creation, and details
     path('posts/', views.post_list, name='post-list'),  # Post list page
@@ -18,5 +25,5 @@ urlpatterns = [
     path('post/<int:id>/', views.post_detail, name='post-detail'),  # Post detail page (with dynamic ID)
     path('posts-and-create/', views.post_list, name='post-list-create'),  # Post list with creation route (you can modify this if needed)
     
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

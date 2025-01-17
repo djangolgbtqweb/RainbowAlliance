@@ -687,79 +687,123 @@ footer p {
 /* Image Styling */
 .hero-image {
     width: 100%;  /* Ensure the image fills the container's width */
-    height: auto;  /* Maintain the image's aspect ratio */
-    object-fit: contain;  /* Ensure the entire image is visible */
+    height: 100%;  /* Make the image height fill the container */
+    object-fit: cover;  /* Ensure the image covers the entire container */
     object-position: center; /* Center the image both vertically and horizontally */
 }
 
 /* Responsive Adjustments */
 @media (min-width: 768px) {
     .image-section {
-        height: 20vh;  /* Increase the container height for medium screens */
+        height: 20vh;  /* Adjust the container height for medium screens */
     }
 }
 
 @media (min-width: 1024px) {
     .image-section {
-        height: 150vh;  /* Adjust the container height for larger screens */
+        height: 170vh;  /* Adjust the container height for larger screens */
     }
 }
 
-/* Additional Image Section Container */
-.additional-image-section {
-    width: 100%;  /* Ensure the container fills the full width */
-    height: 40vh;  /* Set the height of the container for smaller screens */
-    margin-top: 20px;
-    text-align: center;
-    overflow: hidden;  /* Prevent overflow of the image */
-    display: flex;  /* Use flex to center the image */
-    justify-content: center;
-    align-items: center;
+/* Resources Section */
+.resources-section {
+    padding: 40px 20px; /* Add padding for spacing */
+    margin-top: 0px; /* Increase margin for separation */
+    background: linear-gradient(to right, #ff0000, #ff7f00, #ffed00, #008000, #0000ff, #8b00ff); /* LGBTQ+ flag colors */
+    text-align: center; /* Center the heading */
 }
 
-/* Additional Image Section Container */
-.additional-image-section {
-    width: 100%;  /* Ensure the container fills the full width */
-    height: 40vh;  /* Set the height of the container for smaller screens */
-    margin-top: 20px;
-    text-align: center;
-    overflow: hidden;  /* Prevent overflow of the image */
-    display: flex;  /* Use flex to center the image */
-    justify-content: center;
-    align-items: center;
+.resources-section h2 {
+    font-size: 2em; /* Larger font size for prominence */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #fff; /* White text for better contrast */
 }
 
-/* Additional Image Section Container */
-.additional-image-section {
-    width: 100%;  /* Ensure the container fills the full width */
-    height: 50vh;  /* Set the height of the container for smaller screens */
-    margin-top: 20px;
-    text-align: center;
-    overflow: hidden;  /* Prevent overflow of the image */
-    display: flex;  /* Use flex to center the image */
-    justify-content: center;
-    align-items: center;
+.resources-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
+    gap: 20px; /* Space between the items */
+    max-width: 1200px; /* Restrict the width of the container */
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Make it responsive */
 }
 
-/* Additional Image Styling */
+.resource {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex; /* Align content vertically */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resource:hover {
+    transform: translateY(-5px); /* Hover effect */
+}
+
+.resource h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #444; /* Adjusted color for consistency */
+}
+
+.resource p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Mobile View: Stack items vertically */
+@media (max-width: 1024px) {
+    .resources-container {
+        grid-template-columns: 1fr; /* 1 column for smaller screens */
+    }
+}
+
+
+
+.additional-image-section {
+    width: 100%; /* Full width of the section */
+    height: 100vh; /* Set the height of the section */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    overflow: hidden; /* Prevent overflow of the image */
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+/* Image Styling */
 .additional-image {
-    width: 100%;  /* Ensure the image fills the container's width */
-    height: 100%;  /* Ensure the image fills the container's height */
-    object-fit: cover;  /* Cover the container while maintaining aspect ratio */
+    width: 100%; /* Make the image fill the section's width */
+    height: 100%; /* Make the image height fill the section */
+    object-fit: cover; /* Ensure the image covers the entire section */
     object-position: center; /* Center the image both vertically and horizontally */
 }
 
-/* Responsive Adjustments */
-@media (min-width: 768px) {
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
     .additional-image-section {
-        height: 30vh;  /* Adjust the container height for medium screens */
+        height: 60vh; /* Reduce the height for smaller screens */
+    }
+
+    .additional-image {
+        object-position: center top; /* Adjust the image position to favor the top on smaller screens */
     }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 480px) {
     .additional-image-section {
-        height: 90vh;  /* Adjust the container height for larger screens */
+        height: 50vh; /* Further reduce the height on very small screens */
+    }
+
+    .additional-image {
+        object-position: center top; /* Ensure the top part of the image is displayed */
     }
 }
+
 
 

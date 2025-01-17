@@ -66,3 +66,14 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment by {self.author.username} on {self.post.title}"
 
+from django.db import models
+
+class EducationalResource(models.Model):
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    description = models.TextField(null=False)
+    file = models.FileField(upload_to='educational_resources/')  # File upload
+
+    def __str__(self):
+        return self.title
+

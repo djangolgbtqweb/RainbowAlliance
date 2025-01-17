@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Educational Materials</h2>
+<ul>
+    {% for resource in resources %}
+        <li>
+            <strong>{{ resource.title }}</strong><br>
+            Author: {{ resource.author }}<br>
+            Date: {{ resource.date_uploaded }}<br>
+            Description: {{ resource.description }}<br>
+            <a href="{{ resource.file.url }}" target="_blank">Download Resource</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,6 +1,14 @@
 from django import forms
 from .models import User, Post, Comment
 
+from .models import EducationalResource
+
+class EducationalResourceForm(forms.ModelForm):
+    class Meta:
+        model = EducationalResource
+        fields = ['title', 'author', 'description', 'file']
+    description = forms.CharField(widget=forms.Textarea, required=True)   
+
 # Form for User creation
 class UserForm(forms.ModelForm):
     class Meta:

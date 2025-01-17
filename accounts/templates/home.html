@@ -29,9 +29,9 @@
         </nav>
     </header>
 
-    <!-- Image Section (separate container) -->
+    <!-- Image Section -->
     <section class="image-section">
-        <img src="{% static 'images/front.png' %}" alt="" class="hero-image">
+        <img src="{% static 'images/front.png' %}" alt="Rainbow Alliance Front" class="hero-image">
     </section>
 
     <!-- Donation Modal -->
@@ -41,7 +41,7 @@
             <h2>Choose Your Donation Option</h2>
 
             <div class="donation-options">
-                <div class="donation-option" id="paypal-option">
+                <div class="donation-option">
                     <h3>Donate via PayPal</h3>
                     <form action="https://www.paypal.com/donate?hosted_button_id=GEGWMBG5KGFYS" method="post" target="_blank">
                         <label for="amount">Amount (USD):</label>
@@ -55,7 +55,7 @@
                     </form>
                 </div>
 
-                <div class="donation-option" id="skrill-option">
+                <div class="donation-option">
                     <h3>Donate via Skrill</h3>
                     <form>
                         <label for="skrill-amount">Amount (USD):</label>
@@ -102,9 +102,32 @@
                 </div>
             </div>
         </section>
-    <!--New Image Section-->
+
+        <!-- Additional Image Section -->
         <section class="additional-image-section">
             <img src="{% static 'images/blacks1.jpeg' %}" alt="Black Community Support" class="additional-image">
+        </section>
+
+        <section class="resources-section">
+            <h2>Our Resources</h2>
+            <div class="resources-container">
+                <div class="resource">
+                    <h3>Support Hotline</h3>
+                    <p>24/7 confidential support for SOGIESC+ individuals.</p>
+                </div>
+                <div class="resource">
+                    <h3>Educational Materials</h3>
+                    <p><a href="{% url 'educational-resources' %}">Learn more about SOGIESC+ history and issues</a></p>
+                </div>
+                <div class="resource">
+                    <h3>Community Groups</h3>
+                    <p>Find local meetups, support groups, and social events to connect with others who share your experiences.</p>
+                </div>
+                <div class="resource">
+                    <h3>Health Resources</h3>
+                    <p>SOGIESC+-friendly healthcare providers and information.</p>
+                </div>
+            </div>
         </section>
 
         <section class="call-to-action">

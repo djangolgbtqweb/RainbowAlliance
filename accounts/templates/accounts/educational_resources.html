@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Resources</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Educational Resources</h1>
+    </header>
+
+    <main>
+        <!-- Upload New Resource Section -->
+        <section class="upload-resource-section">
+            <h2>Upload a New Resource</h2>
+            <form method="POST" enctype="multipart/form-data" class="upload-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="upload-btn">Upload</button>
+            </form>
+        </section>
+
+        <!-- Available Resources Section -->
+        <section class="available-resources-section">
+            <h2>Available Resources</h2>
+
+            <!-- Resource List -->
+            <ul class="resource-list">
+                {% for resource in resources %}
+                    <li class="resource-item">
+                        <div class="resource-info">
+                            <strong>{{ resource.title }}</strong> by {{ resource.author }} <br>
+                            <p>{{ resource.description }}</p>
+                            <a href="{{ resource.file.url }}" class="view-resource-btn" target="_blank">View Resource</a>
+                        </div>
+                    </li>
+                {% empty %}
+                    <li>No resources available.</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rainbow Alliance. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

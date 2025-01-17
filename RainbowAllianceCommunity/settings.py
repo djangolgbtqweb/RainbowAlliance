@@ -45,7 +45,7 @@ ROOT_URLCONF = 'RainbowAllianceCommunity.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Add this line if you have template files
+        'DIRS': [BASE_DIR / 'templates',],  # Add this line if you have template files
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,3 +101,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom User model
 AUTH_USER_MODEL = 'accounts.User'
+
+# Media files settings
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+

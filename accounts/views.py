@@ -11,6 +11,8 @@ from .forms import CommentForm
 from django.views.generic import ListView
 from django.conf import settings
 import random  # For simulating payment success
+from .models import EducationalResource
+from .forms import EducationalResourceForm
 
 # Home view
 def home(request):
@@ -112,3 +114,31 @@ def post_detail(request, id):
 def post_list(request):
     posts = Post.objects.all().order_by('-created_at')
     return render(request, 'post_list.html', {'posts': posts})
+
+def educational_resources(request):
+    if request.method == 'POST':
+        form = EducationalResourceForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # Optionally, redirect or show a success message
+        else:
+            messages.error(request, "Please provide a description for the resource.")
+    else:
+        form = EducationalResourceForm()
+
+    resources = EducationalResource.objects.all()  # Retrieve all uploaded resources
+    return render(request, 'accounts/educational_resources.html', {'form': form, 'resources': resources})
+
+
+
+def upload_resource(request):
+    if request.method == 'POST':
+        form = EducationalResourceForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # Redirect to the resource list page or show a success message
+            return redirect('educational-resources')  # Assuming this is the name of the page showing resources
+    else:
+        form = EducationalResourceForm()
+    
+    return render(request, 'accounts/upload_resource.html', {'form': form})
