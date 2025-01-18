@@ -60,10 +60,10 @@
                     <form>
                         <label for="skrill-amount">Amount (USD):</label>
                         <select id="skrill-amount" onchange="redirectToSkrill(this)">
-                            <option value="https://skrill.me/rq/Humphrey/50/USD?key=WxVQf8tJAayYm-AZLNDfr0g-PHI">50 USD</option>
-                            <option value="https://skrill.me/rq/Humphrey/100/USD?key=1ZpOsqPtFp26DMwuU23fquNYy_A">100 USD</option>
-                            <option value="https://skrill.me/rq/Humphrey/150/USD?key=paG7OwUITqaDY9a9RFL8uNkECPo">150 USD</option>
-                            <option value="https://skrill.me/rq/Humphrey/200/USD?key=-Uq7xdJcV71LLiY1p_vgAJftr1i">200 USD</option>
+                            <option value="https://skrill.me/rq/Humphrey/50/USD?key=E7W0zQ2u_wN6DijZAycWITK5dz2">50 USD</option>
+                            <option value="https://skrill.me/rq/Humphrey/100/USD?key=zT-1_vpVLHVk1lu-yMqEvVbHI8U">100 USD</option>
+                            <option value="https://skrill.me/rq/Humphrey/150/USD?key=JdvyZWwZwrN3IRuy6fr8Q53zmfa">150 USD</option>
+                            <option value="https://skrill.me/rq/Humphrey/200/USD?key=d5CN1V4QGbWlJhkY_HaRMZYShun">200 USD</option>
                         </select>
                         <button type="button" class="submit-btn" onclick="redirectToSkrill()">Donate</button>
                     </form>
@@ -113,7 +113,9 @@
             <div class="resources-container">
                 <div class="resource">
                     <h3>Support Hotline</h3>
-                    <p>24/7 confidential support for SOGIESC+ individuals.</p>
+                    <p>
+                        <a href="mailto:rainbowsogiesc.community@gmail.com">24/7 confidential support for SOGIESC+ individuals</a>.
+                    </p>
                 </div>
                 <div class="resource">
                     <h3>Educational Materials</h3>
@@ -128,6 +130,10 @@
                     <p>SOGIESC+-friendly healthcare providers and information.</p>
                 </div>
             </div>
+        </section>
+
+        <section class="session-image-section">
+            <img src="{% static 'images/session.jpeg' %}" alt="Session Image" class="session-image">
         </section>
 
         <section class="call-to-action">
@@ -164,6 +170,7 @@
     </script>
 </body>
 </html>
+
 
 
 

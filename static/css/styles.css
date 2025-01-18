@@ -805,5 +805,17 @@ footer p {
     }
 }
 
+/* Session Image Section */
+.session-image-section {
+    width: 100%;
+    margin: rem 0;
+}
+
+.session-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 
