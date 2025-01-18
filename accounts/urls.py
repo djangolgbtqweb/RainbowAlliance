@@ -18,6 +18,8 @@ urlpatterns = [
     path('resources/', views.educational_resources, name='educational-resources'),
     path('upload-resource/', views.upload_resource, name='upload-resource'),
     
+    path('upload/', views.upload_health_resource, name='upload-health-resource'),
+    path('resources/', views.health_resources_list, name='health-resources'),
 
     # HTML views for Post list, creation, and details
     path('posts/', views.post_list, name='post-list'),  # Post list page

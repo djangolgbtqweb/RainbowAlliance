@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Health Resource</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="{% url 'health-resources' %}">View Health Resources</a>
+    </nav>
+
+    <h2>Upload Health Resource</h2>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    <p><a href="{% url 'health-resources' %}">Back to Resources</a></p>
+</body>
+</html>

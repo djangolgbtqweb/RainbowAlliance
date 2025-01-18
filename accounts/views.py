@@ -13,6 +13,9 @@ from django.conf import settings
 import random  # For simulating payment success
 from .models import EducationalResource
 from .forms import EducationalResourceForm
+from .forms import HealthResourceForm
+from .models import HealthResource
+
 
 # Home view
 def home(request):
@@ -142,3 +145,19 @@ def upload_resource(request):
         form = EducationalResourceForm()
     
     return render(request, 'accounts/upload_resource.html', {'form': form})
+
+
+
+def upload_health_resource(request):
+    if request.method == 'POST':
+        form = HealthResourceForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('health-resources')
+    else:
+        form = HealthResourceForm()
+    return render(request, 'accounts/upload.html', {'form': form})
+
+def health_resources_list(request):
+    resources = HealthResource.objects.all().order_by('-uploaded_at')
+    return render(request, 'accounts/resources_list.html', {'resources': resources})

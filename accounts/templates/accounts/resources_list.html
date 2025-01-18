@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Resources</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="{% url 'upload-health-resource' %}">Upload New Resource</a>
+    </nav>
+
+    <h2>SOGIESC+-Friendly Health Resources</h2>
+
+    <ul>
+        {% for resource in resources %}
+            <li>
+                <strong>{{ resource.title }}</strong> - 
+                <a href="{{ resource.file.url }}" download>Download</a> 
+                (Uploaded on {{ resource.uploaded_at|date:"M d, Y" }})
+            </li>
+        {% empty %}
+            <li>No resources uploaded yet.</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{% url 'upload-health-resource' %}">Upload a Document</a></p>
+</body>
+</html>

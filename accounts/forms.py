@@ -3,6 +3,8 @@ from .models import User, Post, Comment
 
 from .models import EducationalResource
 
+from .models import HealthResource
+
 class EducationalResourceForm(forms.ModelForm):
     class Meta:
         model = EducationalResource
@@ -34,3 +36,7 @@ class CommentForm(forms.ModelForm):
         }
 
 
+class HealthResourceForm(forms.ModelForm):
+    class Meta:
+        model = HealthResource
+        fields = ['title', 'file']
