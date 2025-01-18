@@ -15,6 +15,7 @@ from .models import EducationalResource
 from .forms import EducationalResourceForm
 from .forms import HealthResourceForm
 from .models import HealthResource
+from .models import CommunityGroup
 
 
 # Home view
@@ -161,3 +162,19 @@ def upload_health_resource(request):
 def health_resources_list(request):
     resources = HealthResource.objects.all().order_by('-uploaded_at')
     return render(request, 'accounts/resources_list.html', {'resources': resources})
+
+from django.shortcuts import render
+from .models import CommunityGroup  # Assuming you have a model for community groups
+
+def community_groups(request):
+    location = request.GET.get('location')
+    group_type = request.GET.get('group_type')
+    groups = CommunityGroup.objects.all()
+
+    if location:
+        groups = groups.filter(location__icontains=location)
+    if group_type:
+        groups = groups.filter(group_type=group_type)
+
+    return render(request, 'accounts/community_groups.html', {'groups': groups})
+

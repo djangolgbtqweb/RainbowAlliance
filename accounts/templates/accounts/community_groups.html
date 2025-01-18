@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Groups</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Community Groups</h1>
+    </header>
+
+    <main>
+        <!-- Search and Filter Section -->
+        <section class="search-filters-section">
+            <h2>Search and Filter Community Groups</h2>
+            <form method="get" class="search-filters-form">
+                <input type="text" name="location" placeholder="Search by location" value="{{ request.GET.location }}">
+                <select name="group_type">
+                    <option value="">Any Type</option>
+                    <option value="support" {% if request.GET.group_type == "support" %}selected{% endif %}>Support Group</option>
+                    <option value="social" {% if request.GET.group_type == "social" %}selected{% endif %}>Social Event</option>
+                    <option value="professional" {% if request.GET.group_type == "professional" %}selected{% endif %}>Professional Network</option>
+                </select>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </section>
+
+        <!-- No Groups Found Message -->
+        {% if not groups %}
+            <p>No community groups found for the given search criteria.</p>
+        {% endif %}
+
+        <!-- Group Listings -->
+        <section class="group-listings-section">
+            <h2>Available Community Groups</h2>
+            <ul class="group-list">
+                {% for group in groups %}
+                    <li class="group-item">
+                        <div class="group-info">
+                            <strong>{{ group.name }}</strong><br>
+                            <p><strong>Type:</strong> {{ group.get_group_type_display }}</p>
+                            <p><strong>Location:</strong> {{ group.location }}</p>
+                            <p><strong>Date:</strong> {{ group.date }}</p>
+                            <p><strong>Time:</strong> {{ group.time }}</p>
+                            <p><strong>Description:</strong> {{ group.description }}</p>
+                            <a href="{% url 'community-group-detail' group.id %}" class="view-details-btn">Learn More</a>
+                            <button class="rsvp-btn">RSVP</button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rainbow Alliance. All rights reserved.</p>
+    </footer>
+</body>
+</html>

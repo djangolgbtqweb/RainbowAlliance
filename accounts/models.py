@@ -86,3 +86,22 @@ class HealthResource(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class CommunityGroup(models.Model):
+    GROUP_TYPE_CHOICES = [
+        ('support', 'Support Group'),
+        ('social', 'Social Event'),
+        ('professional', 'Professional Network'),
+    ]
+
+    name = models.CharField(max_length=255)
+    group_type = models.CharField(max_length=50, choices=GROUP_TYPE_CHOICES)
+    location = models.CharField(max_length=255)
+    date = models.DateField()
+    time = models.TimeField()
+    description = models.TextField()
+    contact_info = models.EmailField()
+
+    def __str__(self):
+        return self.name

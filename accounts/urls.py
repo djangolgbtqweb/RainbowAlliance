@@ -20,6 +20,7 @@ urlpatterns = [
     
     path('upload/', views.upload_health_resource, name='upload-health-resource'),
     path('resources/', views.health_resources_list, name='health-resources'),
+    path('community-groups/', views.community_groups, name='community-groups'),
 
     # HTML views for Post list, creation, and details
     path('posts/', views.post_list, name='post-list'),  # Post list page
