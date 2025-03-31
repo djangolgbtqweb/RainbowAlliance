@@ -17,7 +17,7 @@ DEBUG = True  # Change to False in production
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'rainbowalliance-gjtb.onrender.com',  # Add Render deployment domain if still using Render
+    'mental-wellness-8ovy.onrender.com',  # Updated Render deployment domain
 ]
 
 # Application definition
