@@ -11,9 +11,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8$sgv_0n-cob20_s79d=xgwnjco)n4gak2oz#_xdw^(omp0gcm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  # Change to False in production
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # Removed render deployment host since we are not using PostgreSQL
+# Allowed hosts for development and production
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'rainbowalliance-gjtb.onrender.com',  # Add Render deployment domain if still using Render
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -100,3 +105,4 @@ AUTH_USER_MODEL = 'accounts.User'
 # Media files settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
