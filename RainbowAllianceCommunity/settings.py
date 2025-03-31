@@ -1,4 +1,3 @@
-from decouple import config
 from pathlib import Path
 import os
 
@@ -14,7 +13,7 @@ SECRET_KEY = 'django-insecure-8$sgv_0n-cob20_s79d=xgwnjco)n4gak2oz#_xdw^(omp0gcm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rainbowalliance-gjtb.onrender.com', 'localhost', '127.0.0.1']  # Update with allowed hosts when deploying
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # Removed render deployment host since we are not using PostgreSQL
 
 # Application definition
 INSTALLED_APPS = [
@@ -45,7 +44,7 @@ ROOT_URLCONF = 'RainbowAllianceCommunity.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates',],  # Add this line if you have template files
+        'DIRS': [BASE_DIR / 'templates'],  # Ensure this is set correctly
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -60,15 +59,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'RainbowAllianceCommunity.wsgi.application'
 
-# Database settings
+# Database settings - Using SQLite3 instead of PostgreSQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', default=5432),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -84,10 +79,10 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will place
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 # Localization settings
@@ -105,4 +100,3 @@ AUTH_USER_MODEL = 'accounts.User'
 # Media files settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
