@@ -4,170 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainbow Alliance Community</title>
+    <title>Mental Health & Wellbeing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        /* Apply Playfair Display to the logo */
+        .logo h1 {
+          font-family: 'Playfair Display';
+        }
+        .hero-text h2, 
+        .hero-text p {
+            font-family: 'Playfair Display';
+        }
+        .initiatives-section,
+        .initiatives-section h2,
+        .initiative h3,
+        .initiative p {
+        font-family: 'Playfair Display';
+        } 
+      </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>Rainbow Alliance</h1>
+                <h1>Mental Wellness Hub</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
-                <li><a href="{% url 'post-list' %}">Posts</a></li>
-
+                <li><a href="{% url 'post-list' %}">Articles</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="/logout/">Logout</a></li>
                 {% else %}
                     <li><a href="/login/">Login</a></li>
                     <li><a href="/signup/">Sign Up</a></li>
                 {% endif %}
-
-                <li><button class="donate-btn" id="donate-btn">Donate Now</button></li>
+                <li><button class="donate-btn" id="donate-btn">Support Us</button></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Image Section -->
     <section class="image-section">
-        <img src="{% static 'images/front.png' %}" alt="Rainbow Alliance Front" class="hero-image">
+        <img src="{% static 'images/front.png' %}" alt="Mental Health Awareness" class="hero-image">
     </section>
-
-    <!-- Donation Modal -->
-    <div id="donate-modal" class="donate-modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close-btn" id="close-modal-btn">&times;</span>
-            <h2>Choose Your Donation Option</h2>
-
-            <div class="donation-options">
-                <div class="donation-option">
-                    <h3>Donate via PayPal</h3>
-                    <form action="https://www.paypal.com/donate?hosted_button_id=GEGWMBG5KGFYS" method="post" target="_blank">
-                        <label for="amount">Amount (USD):</label>
-                        <select name="amount" id="amount">
-                            <option value="50">50 USD</option>
-                            <option value="100">100 USD</option>
-                            <option value="150">150 USD</option>
-                            <option value="200">200 USD</option>
-                        </select>
-                        <button type="submit" class="submit-btn">Donate</button>
-                    </form>
-                </div>
-
-                <div class="donation-option">
-                    <h3>Donate via Skrill</h3>
-                    <form>
-                        <label for="skrill-amount">Amount (USD):</label>
-                        <select id="skrill-amount" onchange="redirectToSkrill(this)">
-                            <option value="https://skrill.me/rq/Humphrey/50/USD?key=yph4U9n7PRjmvjOf3baOnFTuz9-">50 USD</option>
-                            <option value="https://skrill.me/rq/Humphrey/100/USD?key=t5qGfg0HYxHO6B7FnJeltjNItA6">100 USD</option>
-                            <option value="https://skrill.me/rq/Humphrey/150/USD?key=cCa1i8coDEMmrVttzjzsChhrshw">150 USD</option>
-                            <option value="https://skrill.me/rq/Humphrey/200/USD?key=-A2EMVdjmPuedMUhtgO6ESpS4dy">200 USD</option>
-                        </select>
-                        <button type="button" class="submit-btn" onclick="redirectToSkrill()">Donate</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <main class="homepage">
         <section class="hero-section">
             <div class="hero-text">
-                <h2>Empowering the SOGIESC Community – Together, We Rise</h2>
-                <p>At Rainbow Alliance, we are committed to creating a world where the SOGIESC community is celebrated, supported, and empowered.</p>
+                <h2>Prioritizing Mental Wellbeing for a Healthier Life</h2>
+                <p>Join us in fostering a community of mental wellness, support, and growth.</p>
                 <a href="#our-initiatives" class="cta-button">Learn More</a>
             </div>
         </section>
 
         <section id="our-initiatives" class="initiatives-section">
-            <h2>Our Core Initiatives</h2>
+            <h2>Our Wellbeing Initiatives</h2>
             <div class="initiatives-container">
                 <div class="initiative">
-                    <h3>Counseling & Mental Health Support</h3>
-                    <p>Confidential, compassionate support for emotional and mental health challenges.</p>
+                    <h3>Therapy & Counseling</h3>
+                    <p>Access professional therapy and emotional support services.</p>
                 </div>
                 <div class="initiative">
-                    <h3>Empowerment & Advocacy</h3>
-                    <p>Build resilience, gain confidence, and fight for equal rights.</p>
+                    <h3>Mindfulness & Stress Relief</h3>
+                    <p>Learn mindfulness techniques to manage stress and anxiety.</p>
                 </div>
                 <div class="initiative">
-                    <h3>Employment Support</h3>
-                    <p>Connecting SOGIESC individuals to job opportunities and career resources.</p>
+                    <h3>Community Support Groups</h3>
+                    <p>Connect with others in a safe and supportive environment.</p>
                 </div>
                 <div class="initiative">
-                    <h3>Holistic Resources & Support</h3>
-                    <p>Offering housing, legal support, education, and skill-building programs.</p>
+                    <h3>Holistic Wellness Resources</h3>
+                    <p>Find educational materials, self-care tips, and expert advice.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Additional Image Section -->
-        <section class="additional-image-section">
-            <img src="{% static 'images/blacks1.jpeg' %}" alt="Black Community Support" class="additional-image">
         </section>
 
         <section class="resources-section">
-            <h2>Our Resources</h2>
+            <h2>Wellness Resources</h2>
             <div class="resources-container">
                 <div class="resource">
-                    <h3>Support Hotline</h3>
-                    <p>
-                        <a href="mailto:rainbowsogiesc.community@gmail.com">24/7 confidential support for SOGIESC+ individuals</a>.
-                    </p>
+                    <h3>Mental Health Helpline</h3>
+                    <p><a href="mailto:mentalwellness.support@gmail.com">24/7 confidential support</a>.</p>
                 </div>
                 <div class="resource">
-                    <h3>Educational Materials</h3>
-                    <p><a href="{% url 'educational-resources' %}">Learn more about SOGIESC+ history and issues</a></p>
+                    <h3>Educational Guides</h3>
+                    <p><a href="{% url 'mental-health-guides' %}">Explore in-depth articles on mental health</a></p>
                 </div>
                 <div class="resource">
-                    <h3>Community Groups</h3>
-                    <p><a href="{% url 'community-groups' %}"> Find local meetups, support groups, and social events to connect with others who share your experiences.</a><p>
+                    <h3>Support Networks</h3>
+                    <p><a href="{% url 'support-groups' %}">Join online and local mental health support groups</a></p>
                 </div>
                 <div class="resource">
-                    <h3>Health Resources</h3>
-                    <p><a href="{% url 'health-resources' %}">SOGIESC+-friendly healthcare providers and information</a></p>
+                    <h3>Self-Care Strategies</h3>
+                    <p><a href="{% url 'self-care-tips' %}">Discover wellness tips for daily mental well-being</a></p>
                 </div>
             </div>
         </section>
 
-        <section class="session-image-section">
-            <img src="{% static 'images/session.jpeg' %}" alt="Session Image" class="session-image">
-        </section>
-
         <section class="call-to-action">
-            <h3>Why We Need Your Support</h3>
-            <p>Your contribution allows us to continue offering life-changing programs and services to the LGBTQ+ community. Together, we can create an inclusive world where everyone can thrive.</p>
-            <a href="#donate" class="cta-button" id="donate-footer-btn">Donate Now</a>
+            <h3>Help Us Make a Difference</h3>
+            <p>Your support enables us to continue providing mental health resources and services to those in need.</p>
+            <a href="#donate" class="cta-button" id="donate-footer-btn">Support Now</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Rainbow Alliance. All rights reserved.</p>
+        <p>&copy; 2025 Mental Wellness Hub. All rights reserved.</p>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        function redirectToSkrill(selectElement) {
-            const url = selectElement.value || document.getElementById('skrill-amount').value;
-            if (url) {
-                window.open(url, '_blank');
-            }
-        }
-
-        document.getElementById('donate-btn').addEventListener('click', function() {
-            document.getElementById('donate-modal').style.display = 'block';
-        });
-
-        document.getElementById('close-modal-btn').addEventListener('click', function() {
-            document.getElementById('donate-modal').style.display = 'none';
-        });
-
-        document.getElementById('donate-footer-btn').addEventListener('click', function() {
-            document.getElementById('donate-modal').style.display = 'block';
-        });
-    </script>
 </body>
 </html>
 

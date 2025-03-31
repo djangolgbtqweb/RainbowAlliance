@@ -1,13 +1,14 @@
 /* General styling for the navbar */
 nav {
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient */
-    padding: 10px;
+    background: linear-gradient(to right, #11deec, #253f63) !important; /* Calming blue gradient */
+    padding: 7px;
+    font-size: 18px;
     text-align: center;
-    font-family: Arial, sans-serif;
+    
 }
 
 nav a {
-    color: rgb(22, 21, 21);
+    color: rgb(0, 0, 0) !important;
     padding: 10px;
     text-decoration: none;
     font-size: 18px;
@@ -19,12 +20,12 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Slight hover effect */
+    background-color: rgba(255, 208, 0, 0.712) !important; /* Slight hover effect */
 }
 
 /* Styling for the form container */
 .form-container {
-    background:linear-gradient(to right, red, orange, yellow, green, indigo, violet); /* Rainbow gradient */
+    background: linear-gradient(to right, #edf2f7, #ffffff); /* Soft neutral blue gradient */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     max-width: 900px; /* Form width */
@@ -94,7 +95,7 @@ body {
 }
 
 .hero-section {
-    background: linear-gradient(to right, #afafaf, #b1b1b1); /* Warm gradient background */
+    background: linear-gradient(to right, #d7e1ec, #f0f4f8); /* Soft blue-gray gradient background */
     color: white; /* Text color for contrast */
     padding: 100px 20px; /* Space around the section */
     text-align: center; /* Center the text */
@@ -135,7 +136,7 @@ body {
 }
 
 .cta-button {
-    background-color: #a7a7a7; /* A warm color that stands out */
+    background-color: #a7a7a7; /* A neutral color that stands out */
     color: rgb(0, 0, 0);
     padding: 10px 20px;
     font-size: 18px;
@@ -149,15 +150,14 @@ body {
 }
 
 /* Initiatives Section Styling */
-
 .initiative {
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient */
-    color: rgb(0, 0, 0); /* Text color for contrast */
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Calming pastel blue gradient */
+    color: #000; /* Text color for contrast */
     border-radius: 10px; /* Rounded corners */
     padding: 20px; /* Spacing inside the container */
     margin: 10px; /* Spacing between containers */
     text-align: center; /* Center-align text */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
@@ -186,7 +186,7 @@ body {
 
 /* Call to Action Styling */
 .call-to-action {
-    background-color: #ffeb3b;
+    background-color: #d7e1ec; /* Soft blue for call-to-action */
     padding: 60px 20px;
     text-align: center;
 }
@@ -204,7 +204,7 @@ body {
 }
 
 .call-to-action .cta-button {
-    background-color: #007bff;
+    background-color: #66a6ff;
     color: white;
     padding: 15px 30px;
     font-size: 18px;
@@ -231,6 +231,7 @@ footer p {
     margin: 0;
 }
 
+/* Styling for the post list and detail sections */
 .post-list {
     list-style-type: none; /* Removes the bullet points */
     padding: 0; /* Removes extra space */
@@ -263,13 +264,13 @@ footer p {
 .post-body p {
     font-size: 16px;
     line-height: 1.6;
-    color: #000000; /* Softer text color for content */
+    color: #000; /* Softer text color for content */
     margin-bottom: 15px;
 }
 
 .post-meta p {
     font-size: 14px;
-    color: #000000; /* Even softer text color for metadata */
+    color: #000;
     margin-bottom: 5px;
 }
 
@@ -279,12 +280,12 @@ footer p {
 }
 
 .post-list-section {
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient */
-    padding: 30px 15px; /* Add some spacing */
-    border-radius: 10px; /* Round the section edges */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
-    margin: 20px auto; /* Center the section */
-    max-width: 100%; /* Full-width responsiveness */
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Calming blue gradient */
+    padding: 30px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 100%;
 }
 
 /* General styling for the post detail page */
@@ -309,7 +310,7 @@ footer p {
 /* Meta Information (Author, Date Created) */
 .post-meta {
     font-size: 1rem;
-    color: #000000;
+    color: #000;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -321,7 +322,7 @@ footer p {
 /* Post Content Styling */
 .post-body {
     font-size: 1.2rem;
-    color: #000000;
+    color: #000;
     line-height: 1.6;
     margin-bottom: 40px;
 }
@@ -507,19 +508,18 @@ footer p {
 
 /* Styling for the Post Content at the Top of the Comments Section */
 .post-details {
-    background: linear-gradient(to right, orange, yellow, green, indigo, violet); /* Rainbow gradient */
-    padding: 5px 30px; /* Add some spacing */
-    border-radius: 10px; /* Round the section edges */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
-    margin: 20px auto; /* Center the section */
-    max-width: 100%; /* Full-width responsiveness */
-
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Calming blue gradient */
+    padding: 5px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 100%;
 }
 
 /* Title Styling */
 .post-details h1 {
     font-size: 2rem;
-    color: #000000; /* Darker text for the title */
+    color: #000;
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
@@ -528,7 +528,7 @@ footer p {
 /* Content Styling */
 .post-details .post-content {
     font-size: 1.2rem;
-    color: #000000; /* Softer text for content */
+    color: #000;
     margin-bottom: 20px;
     line-height: 1.6;
     text-align: justify;
@@ -537,24 +537,24 @@ footer p {
 /* Author and Metadata Styling */
 .post-details .post-meta {
     font-size: 1rem;
-    color: #000000; /* Subtle color for metadata */
+    color: #000;
     text-align: center;
     margin-top: 10px;
 }
 
 .post-details .post-meta strong {
-    color: #000000; /* Highlight the metadata labels */
+    color: #000;
 }
 
 /* Optional: Add a Border Separator */
 .post-details .separator {
     height: 2px;
-    background-color: #c04d4d; /* Light separator line */
+    background-color: #c04d4d;
     margin: 20px 0;
 }
 
 .post-meta p {
-    color: rgb(0, 0, 0);
+    color: #000;
 }
 
 /* Skrill Donation Modal Styles */
@@ -567,7 +567,6 @@ footer p {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -625,129 +624,117 @@ footer p {
 /* Responsive Navbar for smaller screens */
 @media (max-width: 968px) {
     nav {
-        padding: 1px; /* Reduce padding for smaller screens */
+        padding: 1px;
     }
-
     .nav-links {
         display: flex;
-        justify-content: space-evenly; /* Align links evenly across the width */
-        width: 100%; /* Make the navbar links take the full width */
-        padding: 0; /* Remove padding to make the navbar compact */
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0;
     }
-
     nav a {
-        font-size: 14px; /* Reduce font size */
-        margin: 0 1px; /* Slightly reduced margin between items */
+        font-size: 14px;
+        margin: 0 1px;
     }
-
     .nav-links li {
-        margin: 0; /* Remove extra margin for list items */
+        margin: 0;
     }
-
-    /* Optional: Add padding and reduce font size for form containers */
     .form-container {
-        padding: 10px; /* Reduce padding */
-        max-width: 100%; /* Ensure container takes full width */
+        padding: 10px;
+        max-width: 100%;
     }
-
     h2 {
-        font-size: 20px; /* Adjust heading size for better mobile view */
+        font-size: 20px;
     }
-    
     .hero-text h2 {
-        font-size: 32px; /* Adjust hero title for smaller screens */
+        font-size: 32px;
     }
-
     .cta-button {
-        font-size: 16px; /* Reduce font size of the CTA button */
-        padding: 8px 16px; /* Adjust padding */
+        font-size: 16px;
+        padding: 8px 16px;
     }
-
     .initiative {
-        font-size: 14px; /* Reduce font size of initiatives */
-        padding: 15px; /* Adjust padding */
+        font-size: 14px;
+        padding: 15px;
     }
-
     .call-to-action h3 {
-        font-size: 24px; /* Adjust call-to-action heading size */
+        font-size: 24px;
     }
 }
 
 .image-section {
-    width: 100%;  /* Ensure the container fills the full width */
-    height: 40vh;  /* Set the height of the container for smaller screens */
-    margin-top: 0px;
+    width: 100%;
+    height: 40vh;
+    margin-top: 0;
     text-align: center;
-    overflow: hidden;  /* Prevent overflow of the image */
-    display: flex;  /* Use flex to center the image */
+    overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Image Styling */
 .hero-image {
-    width: 100%;  /* Ensure the image fills the container's width */
-    height: 100%;  /* Make the image height fill the container */
-    object-fit: cover;  /* Ensure the image covers the entire container */
-    object-position: center; /* Center the image both vertically and horizontally */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-/* Responsive Adjustments */
 @media (min-width: 768px) {
     .image-section {
-        height: 20vh;  /* Adjust the container height for medium screens */
+        height: 20vh;
     }
 }
 
 @media (min-width: 1024px) {
     .image-section {
-        height: 170vh;  /* Adjust the container height for larger screens */
+        height: 170vh;
     }
 }
 
 /* Resources Section */
 .resources-section {
-    padding: 40px 20px; /* Add padding for spacing */
-    margin-top: 0px; /* Increase margin for separation */
-    background: linear-gradient(to right, #ff0000, #ff7f00, #ffed00, #008000, #0000ff, #8b00ff); /* LGBTQ+ flag colors */
-    text-align: center; /* Center the heading */
+    padding: 40px 20px;
+    margin-top: 0;
+    background: linear-gradient(to right, #d0e1f9, #f9f9f9); /* Calming blue/neutral gradient */
+    text-align: center;
 }
 
 .resources-section h2 {
-    font-size: 2em; /* Larger font size for prominence */
-    margin-bottom: 30px; /* Space below the heading */
-    color: #fff; /* White text for better contrast */
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #fff;
 }
 
 .resources-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
-    gap: 20px; /* Space between the items */
-    max-width: 1200px; /* Restrict the width of the container */
-    margin: 0 auto; /* Center the container */
-    width: 100%; /* Make it responsive */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .resource {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
-    display: flex; /* Align content vertically */
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .resource:hover {
-    transform: translateY(-5px); /* Hover effect */
+    transform: translateY(-5px);
 }
 
 .resource h3 {
     font-size: 1.5em;
     margin-bottom: 15px;
-    color: #444; /* Adjusted color for consistency */
+    color: #444;
 }
 
 .resource p {
@@ -758,50 +745,44 @@ footer p {
 /* Mobile View: Stack items vertically */
 @media (max-width: 1024px) {
     .resources-container {
-        grid-template-columns: 1fr; /* 1 column for smaller screens */
+        grid-template-columns: 1fr;
     }
 }
-
-
 
 .additional-image-section {
-    width: 100%; /* Full width of the section */
-    height: 100vh; /* Set the height of the section */
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove default padding */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    overflow: hidden; /* Prevent overflow of the image */
-    background-color: #f0f0f0; /* Optional background color */
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f0f0f0;
 }
 
-/* Image Styling */
 .additional-image {
-    width: 100%; /* Make the image fill the section's width */
-    height: 100%; /* Make the image height fill the section */
-    object-fit: cover; /* Ensure the image covers the entire section */
-    object-position: center; /* Center the image both vertically and horizontally */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-/* Responsive styling for smaller screens */
 @media (max-width: 768px) {
     .additional-image-section {
-        height: 60vh; /* Reduce the height for smaller screens */
+        height: 60vh;
     }
-
     .additional-image {
-        object-position: center top; /* Adjust the image position to favor the top on smaller screens */
+        object-position: center top;
     }
 }
 
 @media (max-width: 480px) {
     .additional-image-section {
-        height: 50vh; /* Further reduce the height on very small screens */
+        height: 50vh;
     }
-
     .additional-image {
-        object-position: center top; /* Ensure the top part of the image is displayed */
+        object-position: center top;
     }
 }
 

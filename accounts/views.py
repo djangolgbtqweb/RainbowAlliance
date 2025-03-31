@@ -178,3 +178,12 @@ def community_groups(request):
 
     return render(request, 'accounts/community_groups.html', {'groups': groups})
 
+
+def mental_health_guides(request):
+    return render(request, 'accounts/mental_health_guides.html')
+
+def support_groups(request):
+    return render(request, 'accounts/support_groups.html')
+
+def self_care_tips(request):
+    return render(request, 'accounts/self_care_tips.html')

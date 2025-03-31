@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Care Tips</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Self-Care Tips</h1>
+    </header>
+
+    <main>
+        <p>Explore self-care strategies for mental and emotional well-being.</p>
+        <ul>
+            <li>Practice mindfulness and meditation daily.</li>
+            <li>Engage in physical activities like yoga or walking.</li>
+            <li>Stay connected with supportive friends and family.</li>
+            <li>Prioritize rest and maintain a consistent sleep schedule.</li>
+            <li>Engage in hobbies that bring joy and relaxation.</li>
+        </ul>
+
+        <a href="{% url 'home' %}">Back to Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rainbow Alliance. All rights reserved.</p>
+    </footer>
+</body>
+</html>

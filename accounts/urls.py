@@ -12,9 +12,14 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),  # User signup route
     path('login/', views.login_user, name='login'),  # User login route
     path('logout/', LogoutView.as_view(next_page='home'), name='logout'),  # Redirect to home after logout
-     path('accounts/signup/', RedirectView.as_view(url='/signup/', permanent=False)),
+    path('accounts/signup/', RedirectView.as_view(url='/signup/', permanent=False)),
     path('accounts/login/', RedirectView.as_view(url='/login/', permanent=False)),
     
+    path('mental-health-guides/', views.mental_health_guides, name='mental-health-guides'),
+    path('support-groups/', views.support_groups, name='support-groups'),
+    path('self-care-tips/', views.self_care_tips, name='self-care-tips'),
+
+
     path('resources/', views.educational_resources, name='educational-resources'),
     path('upload-resource/', views.upload_resource, name='upload-resource'),
     

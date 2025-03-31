@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Groups</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Support Groups</h1>
+    </header>
+
+    <main>
+        <p>Welcome to the Support Groups section! Here, you can find various mental health and community support groups tailored to SOGIESC+ individuals.</p>
+        
+        <h2>Available Support Groups:</h2>
+        <ul>
+            <li><strong>Online LGBTQ+ Mental Health Support</strong> – Weekly virtual meetings to discuss mental wellness.</li>
+            <li><strong>Queer Peer Support Network</strong> – A safe space for peer-to-peer support and counseling.</li>
+            <li><strong>Trans & Non-Binary Community Group</strong> – Focused on support and resources for trans and non-binary individuals.</li>
+            <li><strong>Local LGBTQ+ Support Circles</strong> – In-person meetups in different cities.</li>
+        </ul>
+
+        <h2>Join a Support Group</h2>
+        <p>If you're interested in joining a group, please contact us or sign up for upcoming sessions.</p>
+        <a href="{% url 'home' %}">Back to Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rainbow Alliance. All rights reserved.</p>
+    </footer>
+</body>
+</html>
