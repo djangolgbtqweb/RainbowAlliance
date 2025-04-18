@@ -745,3 +745,8 @@ footer p {
     }
 }
 
+.resources-section {
+    background-color: #2263cc;  /* Light blue background */
+    padding: 60px 20px;
+    border-radius: 10px;
+}
